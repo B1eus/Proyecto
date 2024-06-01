@@ -9,7 +9,7 @@ package proyectofinal;
  * @author beus2
  */
 public class Cajero {
- private int idCajero;
+ private int idCajero =10015431;
 	private String nombreC;
 
 	public int getIdCajero() {
