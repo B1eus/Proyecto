@@ -299,14 +299,16 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
         Transaccion transaccion = new Transaccion(0,0.0);
         double monto = Double.parseDouble(ValorDepo.getText());
         cuenta1.depositar(transaccion);
+        CampoSaldo.setText(String.format("%.2f", monto));
+        
         TexNumTar.setVisible(false);
         CampoTarjeta.setVisible(false);
         ValorDepo.setVisible(true);
         NumeroCueDepo.setVisible(true);
         CampoDeposito.setVisible(true);
         CampoNumDepo.setVisible(true);
-        TexSaldo.setVisible(false);
-        CampoSaldo.setVisible(false);
+        TexSaldo.setVisible(true);
+        CampoSaldo.setVisible(true);
     }//GEN-LAST:event_BotonDepositarActionPerformed
 
     private void BotonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConsultarActionPerformed
@@ -319,8 +321,8 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
         CampoSaldo.setText(String.format("%.2f", saldo));
         TexNumTar.setVisible(false);
         CampoTarjeta.setVisible(false);
-        TexSaldo.setVisible(false);
-        CampoSaldo.setVisible(false); 
+        TexSaldo.setVisible(true);
+        CampoSaldo.setVisible(true); 
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "El saldo debe ser un número válido.", "Error de formato", JOptionPane.ERROR_MESSAGE);
     }
@@ -340,16 +342,19 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
        Transaccion transaccion = new Transaccion(0,0.0);
        double monto = Double.parseDouble(valorReti.getText());
         cuenta1.retirar(transaccion);
+        CampoSaldo.setText(String.format("%.2f", monto));
         TexNumTar.setVisible(false);
         CampoTarjeta.setVisible(false);
         valorReti.setVisible(true);
         campoRetiro.setVisible(true);
-        TexSaldo.setVisible(false);
-        CampoSaldo.setVisible(false);
+        TexSaldo.setVisible(true);
+        CampoSaldo.setVisible(true);
     }//GEN-LAST:event_BotonRetirarActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        // TODO add your handling code here:
+        
+    JOptionPane.showMessageDialog(this, "Saliendo del programa", "Información", JOptionPane.INFORMATION_MESSAGE);
+    this.dispose();
     }//GEN-LAST:event_SalirActionPerformed
 
     /**
