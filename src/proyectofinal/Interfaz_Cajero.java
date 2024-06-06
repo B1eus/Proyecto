@@ -5,7 +5,7 @@
 package proyectofinal;
 
 import javax.swing.JOptionPane;
-
+import java.awt.event.ActionListener;
 /**
  *
  * @author beus2
@@ -52,6 +52,7 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
         CampoDeposito = new javax.swing.JTextField();
         CampoNumDepo = new javax.swing.JTextField();
         campoRetiro = new javax.swing.JTextField();
+        Validar = new javax.swing.JButton();
         gif1 = new javax.swing.JLabel();
         gif2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -84,11 +85,18 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
             }
         });
 
-        ValorDepo.setText("Cuanto va a Depositar");
+        ValorDepo.setText("Dinero a Depositar");
 
         NumeroCueDepo.setText("Numero de cuenta");
 
-        valorReti.setText("Cuanto va a retirar:");
+        valorReti.setText("Dinero a retirar:");
+
+        Validar.setText("Validar");
+        Validar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ValidarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,15 +104,6 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(CampoSaldo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(TexSaldo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,24 +117,38 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
                                     .addComponent(NumeroCueDepo))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CampoNumDepo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CampoDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(CampoDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CampoNumDepo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(69, 69, 69)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(TexClave)
-                                .addGap(60, 60, 60)
-                                .addComponent(CampoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(TexNumTar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(CampoTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CampoTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(TexClave)
+                                        .addGap(60, 60, 60))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(TexSaldo)
+                                        .addGap(46, 46, 46)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addComponent(CampoSaldo))
+                                    .addComponent(CampoClave, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Validar))))
                         .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TexTipoTarj)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(58, 58, 58))
+                .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(170, 170, 170))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +157,7 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
                 .addComponent(Titulo)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TexNumTar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CampoTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,11 +165,13 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(TexClave))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
+                        .addGap(56, 56, 56)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CampoClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Validar)
+                .addGap(1, 1, 1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TexSaldo)
                     .addComponent(CampoSaldo))
@@ -286,7 +301,7 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addComponent(gif2)))
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
 
         gif1.getAccessibleContext().setAccessibleName("");
@@ -331,8 +346,8 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonConsultarActionPerformed
 
     private void CampoTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoTarjetaActionPerformed
-        CuentaBancaria cuenta1 = new CuentaBancaria(null, 0);
-        cuenta1.getNumeroCuenta();
+        Tarjeta tarjeta = new Tarjeta(0,null,null);
+        tarjeta.getNumerotarjeta();
         TexNumTar.setVisible(false);
         CampoTarjeta.setVisible(false);
     }//GEN-LAST:event_CampoTarjetaActionPerformed
@@ -356,6 +371,10 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
     JOptionPane.showMessageDialog(this, "Saliendo del programa", "Información", JOptionPane.INFORMATION_MESSAGE);
     this.dispose();
     }//GEN-LAST:event_SalirActionPerformed
+
+    private void ValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidarActionPerformed
+        CampoTarjetaActionPerformed(evt);
+    }//GEN-LAST:event_ValidarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -409,6 +428,7 @@ public class Interfaz_Cajero extends javax.swing.JFrame {
     private javax.swing.JLabel TexSaldo;
     private javax.swing.JLabel TexTipoTarj;
     private javax.swing.JLabel Titulo;
+    public javax.swing.JButton Validar;
     private javax.swing.JLabel ValorDepo;
     private javax.swing.JTextField campoRetiro;
     private javax.swing.JLabel gif1;
